@@ -15,14 +15,15 @@ This is a Tampermonkey userscript designed to streamline the process of importin
 
 1. Ensure you have Tampermonkey installed in your browser. If not, download and install from [Tampermonkey's website](http://tampermonkey.net/).
 2. Click [here](https://raw.githubusercontent.com/GiganticPlayground/RunnTimesheetUserscript/main/runnUserScript.user.js) to install the script.
-3. Once installed, the script will prompt you to enter your ClickUp Team ID and API Token the first time it runs.
+3. Once installed, the script will prompt you to enter your ClickUp Team ID, ClickUp API Token, and Runn API Token the first time it runs.
 
 ## Setup
 
-To use this script, you need your ClickUp Team ID and API Token:
+To use this script, you need your ClickUp Team ID, ClickUp API Token, and Runn API Token:
 
 1. **Find your ClickUp Team ID**: This can typically be found in your ClickUp URL when you're logged in, e.g., `https://app.clickup.com/{Team_ID}/`.
-2. **Generate an API Token**: Go to your ClickUp settings, navigate to the Integrations or API section, and generate a new token. See the [ClickUp Documentation](https://clickup.com/api/developer-portal/authentication#personal-token) for more details.
+2. **Generate a ClickUp API Token**: Go to your ClickUp settings, navigate to the Integrations or API section, and generate a new token. See the [ClickUp Documentation](https://clickup.com/api/developer-portal/authentication#personal-token) for more details.
+3. **Generate a Runn.io API Token**: API tokens are generated through the Runn application, via “Settings > API”. Only administrators in your Runn account can generate them.
 
 Upon running the script for the first time on a [Runn timesheet page](https://app.runn.io/timesheets), you'll be prompted to enter these details. They are stored securely and used to fetch your time entries.
 
