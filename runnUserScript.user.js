@@ -8,7 +8,8 @@
 // @icon         https://giganticplayground.com/wp-content/uploads/2023/09/cropped-gp_favicon-180x180.png
 // @homepage     https://github.com/GiganticPlayground/RunnTimesheetUserscript
 // @supportURL   https://github.com/GiganticPlayground/RunnTimesheetUserscript/issues
-// @updateURL    https://raw.githubusercontent.com/GiganticPlayground/RunnTimesheetUserscript/main/userscript.js
+// @updateURL    https://raw.githubusercontent.com/GiganticPlayground/RunnTimesheetUserscript/main/runnUserScript.user.js
+// @downloadURL  https://raw.githubusercontent.com/GiganticPlayground/RunnTimesheetUserscript/main/runnUserScript.user.js
 // @match        https://app.runn.io/timesheets*
 // @grant        GM_setValue
 // @grant        GM_getValue
