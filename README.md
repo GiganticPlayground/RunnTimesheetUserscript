@@ -4,6 +4,8 @@
 
 This is a Tampermonkey userscript designed to streamline the process of importing time entries from ClickUp into Runn. By fetching project-specific time entries from ClickUp and allowing users to quickly fill them into the Runn timesheet interface, this script saves time and reduces manual entry errors.
 
+**Warning**: Currently, this script only supports importing hours for the current work week.
+
 ## Features
 
 - Fetches time entries from ClickUp API.
