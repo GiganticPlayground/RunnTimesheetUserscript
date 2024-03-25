@@ -1,5 +1,7 @@
 # RunnTimesheetUserscript
 
+![screenshot of userscript running](screenshot.png)
+
 ## Description
 
 This is a Tampermonkey userscript designed to streamline the process of importing time entries from ClickUp into Runn. By fetching project-specific time entries from ClickUp and allowing users to quickly fill them into the Runn timesheet interface, this script saves time and reduces manual entry errors.
