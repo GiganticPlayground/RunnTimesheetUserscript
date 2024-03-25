@@ -4,7 +4,7 @@
 
 ## Description
 
-This is a Tampermonkey userscript designed to streamline the process of importing time entries from ClickUp into Runn. By fetching project-specific time entries from ClickUp and allowing users to quickly fill them into the Runn timesheet interface, this script saves time and reduces manual entry errors.
+This is a userscript designed to streamline the process of importing time entries from ClickUp into Runn. By fetching project-specific time entries from ClickUp and allowing users to quickly fill them into the Runn timesheet interface, this script saves time and reduces manual entry errors.
 
 **Warning**: Currently, this script only supports importing hours for the current work week.
 
@@ -17,7 +17,7 @@ This is a Tampermonkey userscript designed to streamline the process of importin
 
 ## Installation
 
-1. Ensure you have Tampermonkey installed in your browser. If not, download and install from [Tampermonkey's website](http://tampermonkey.net/).
+1. Ensure you have Tampermonkey installed in your browser or another userscript extension. If not, download and install from [Tampermonkey's website](http://tampermonkey.net/). The script has only been tested with Tampermonkey.
 2. Click [here](https://raw.githubusercontent.com/GiganticPlayground/RunnTimesheetUserscript/main/runnUserScript.user.js) to install the script.
 3. Once installed, the script will prompt you to enter your ClickUp Team ID, ClickUp API Token, and Runn API Token the first time it runs.
 
@@ -33,7 +33,7 @@ Upon running the script for the first time on a [Runn timesheet page](https://ap
 
 ## Usage
 
-Navigate to your [Runn timesheet page](https://app.runn.io/timesheets). If you're running the script for the first time, follow the prompt to enter your ClickUp Team ID and API Token.
+Navigate to your [Runn timesheet page](https://app.runn.io/timesheets). If you're running the script for the first time, follow the prompt to enter your ClickUp Team ID, ClickUp API Token, and Runn API Token.
 
 Once set up, click Edit Timesheets, you'll then see an "Import ClickUp Hours" button on the Runn interface in the bottom left. Clicking this button fetches your time entries from ClickUp and fills them into the corresponding fields in Runn.
 
