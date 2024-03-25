@@ -43,6 +43,10 @@ We welcome contributions and suggestions! If you'd like to contribute or have fo
 
 [https://github.com/GiganticPlayground/RunnTimesheetUserscript](https://github.com/GiganticPlayground/RunnTimesheetUserscript)
 
+## Develoopment
+
+To make development eaiser you should use this setup: https://stackoverflow.com/questions/41212558/develop-tampermonkey-scripts-in-a-real-ide-with-automatic-deployment-to-openuser.
+
 ## Support
 
 If you encounter any issues or have questions, please file an issue on the GitHub repository. For more detailed inquiries or suggestions, feel free to contact us via Github Issues.
