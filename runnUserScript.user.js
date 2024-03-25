@@ -19,6 +19,9 @@
 (function () {
   "use strict";
 
+  const scriptName = "RunnTimesheetUserscript";
+  const scriptVersion = "0.1";
+
   // Function to ask for ClickUp Team ID
   function askForClickUpTeamID() {
     let clickUpTeamID = GM_getValue("clickUpTeamID", null);
@@ -243,6 +246,12 @@
     container.style.padding = "20px";
     container.style.color = "white";
 
+    const headerContainer = document.createElement("div");
+    headerContainer.style.display = "flex";
+    headerContainer.style.alignItems = "flex-start"; // Align items at the start of the container vertically
+    headerContainer.style.justifyContent = "flex-start"; // Align items to the start horizontally
+    headerContainer.style.marginBottom = "10px"; // Space between this section and the next
+
     // Create and add the logo at the top of the div
     const logo = document.createElement("img");
     logo.src =
@@ -251,7 +260,25 @@
     logo.style.height = "auto";
     logo.style.display = "block";
     logo.style.marginBottom = "10px"; // Space between the logo and the next element
-    container.appendChild(logo);
+    headerContainer.appendChild(logo);
+
+    const textContainer = document.createElement("div");
+    textContainer.style.display = "flex";
+    textContainer.style.flexDirection = "column"; // Stack items vertically
+    textContainer.style.marginLeft = "10px"; // Space between the logo and the text container
+
+    const scriptNameElement = document.createElement("div");
+    scriptNameElement.textContent = scriptName;
+    scriptNameElement.style.fontWeight = "bold";
+    textContainer.appendChild(scriptNameElement); // Add the script name to the text container
+
+    const scriptVersionElement = document.createElement("div");
+    scriptVersionElement.textContent = `v${scriptVersion}`;
+    textContainer.appendChild(scriptVersionElement); // Add the script version below the name in the text container
+
+    headerContainer.appendChild(textContainer); // Add the text container to the header container
+
+    container.appendChild(headerContainer); // Add the header container to the main container
 
     // Calculate start and end dates of the current work week (Monday to Friday)
     const currentDate = new Date();
