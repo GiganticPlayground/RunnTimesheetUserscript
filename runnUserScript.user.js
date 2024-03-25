@@ -19,9 +19,6 @@
 (function () {
   "use strict";
 
-  const scriptName = "RunnTimesheetUserscript";
-  const scriptVersion = "0.1";
-
   // Function to ask for ClickUp Team ID
   function askForClickUpTeamID() {
     let clickUpTeamID = GM_getValue("clickUpTeamID", null);
@@ -268,12 +265,12 @@
     textContainer.style.marginLeft = "10px"; // Space between the logo and the text container
 
     const scriptNameElement = document.createElement("div");
-    scriptNameElement.textContent = scriptName;
+    scriptNameElement.textContent = GM_info.script.name;
     scriptNameElement.style.fontWeight = "bold";
     textContainer.appendChild(scriptNameElement); // Add the script name to the text container
 
     const scriptVersionElement = document.createElement("div");
-    scriptVersionElement.textContent = `v${scriptVersion}`;
+    scriptVersionElement.textContent = `v${GM_info.script.version}`;
     textContainer.appendChild(scriptVersionElement); // Add the script version below the name in the text container
 
     headerContainer.appendChild(textContainer); // Add the text container to the header container
