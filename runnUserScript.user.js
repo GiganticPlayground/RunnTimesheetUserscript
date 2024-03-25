@@ -384,7 +384,10 @@
             (ref) => ref.referenceName === "clickupListId"
           );
           if (reference && project.name) {
-            acc[project.name] = reference.externalId;
+            // Split the externalId by comma and trim spaces to support multiple list IDs
+            acc[project.name] = reference.externalId
+              .split(",")
+              .map((id) => id.trim());
           }
           return acc;
         }, {});
@@ -411,24 +414,28 @@
         const datesOfWeek = getWorkWeekDates();
 
         clickUpTimeEntries.forEach((entry) => {
-          const projectIndex = listIdToProjectIndex[entry.listId];
-          if (projectIndex !== undefined) {
-            const dateIndex = datesOfWeek.findIndex(
-              (date) => date === entry.date
-            );
-            if (dateIndex >= 0) {
-              // Calculate the input index, adjusting correctly for skipped inputs
-              const inputIndex = projectIndex * 6 + dateIndex;
-              console.log(`inputIndex for ${entry.date}: ${inputIndex}`);
-
-              if (inputIndex >= 0 && inputIndex < inputs.length) {
-                simulateTyping(
-                  inputs[inputIndex],
-                  Math.round(entry.duration).toString()
+          Object.entries(listIdToProjectIndex).forEach(
+            ([listId, projectIndex]) => {
+              if (listId.includes(entry.listId)) {
+                // Check if the entry's listId is included in the project's list of listIds
+                const dateIndex = datesOfWeek.findIndex(
+                  (date) => date === entry.date
                 );
+                if (dateIndex >= 0) {
+                  // Calculate the input index, adjusting correctly for skipped inputs
+                  const inputIndex = projectIndex * 6 + dateIndex;
+                  console.log(`inputIndex for ${entry.date}: ${inputIndex}`);
+
+                  if (inputIndex >= 0 && inputIndex < inputs.length) {
+                    simulateTyping(
+                      inputs[inputIndex],
+                      Math.round(entry.duration).toString()
+                    );
+                  }
+                }
               }
             }
-          }
+          );
         });
       } catch (error) {
         console.error("Error fetching and filling ClickUp hours:", error);
