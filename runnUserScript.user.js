@@ -11,6 +11,7 @@
 // @updateURL    https://raw.githubusercontent.com/GiganticPlayground/RunnTimesheetUserscript/main/runnUserScript.user.js
 // @downloadURL  https://raw.githubusercontent.com/GiganticPlayground/RunnTimesheetUserscript/main/runnUserScript.user.js
 // @match        https://app.runn.io/timesheets*
+// @grant        GM_info
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_xmlhttpRequest
