@@ -80,6 +80,14 @@
           addedNode.addEventListener("click", () => {
             enableGPPopOver();
           });
+        } else if (
+          addedNode.nodeType === 1 &&
+          (addedNode.textContent.includes("Cancel") ||
+            addedNode.textContent.includes("Save"))
+        ) {
+          addedNode.addEventListener("click", () => {
+            removeGPPopOver();
+          });
         }
       });
     });
@@ -243,6 +251,7 @@
     container.style.backgroundColor = "rgb(168, 211, 222)"; // blue=rgb(168, 211, 222) | orange=rgb(217, 83, 55)
     container.style.padding = "20px";
     container.style.color = "white";
+    container.id = "gpPopOver";
 
     const headerContainer = document.createElement("div");
     headerContainer.style.display = "flex";
@@ -348,6 +357,15 @@
       popOver: container,
       importClickUpHoursButton: button,
     };
+  }
+
+  // Function to hide and remove the pop-over when the user hits the save or cancel buttons
+  function removeGPPopOver() {
+    const popOver = document.querySelector("#gpPopOver");
+    if (popOver) {
+      popOver.style.display = "none";
+      popOver.remove();
+    }
   }
 
   // Function to simulate typing in an input element
